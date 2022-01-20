@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td, th {
+  border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+
+<p>Click the Add button to insert name and grade in the table.</p>
+
+<form id="form">
+    <p>Name:<input type="text" id="name" required></p>
+    <p>Grade:<input type="number" id="grades" required></p>
+    <p></p><button type="submit" id="add">Add</button>  <button type="button" onclick="getAverage()">Get Average</button>  <button type="button" onclick="clearRows()">Clear</button></p>
+</form>
+
+<table id="uTable">
+    <th>Names</th>
+    <th>Grades</th>
+</table>
+<br>
+<span id="average"></span>
+
+<script>
+const table = document.getElementById("uTable");
+const form = document.getElementById("form");
+form.addEventListener("submit", getInput);
+
+function getInput(event){
+    let name = document.getElementById("name").value;
+    let grade = document.getElementById("grades").value;
+
+    let row = table.insertRow(1);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    cell1.innerHTML = name;
+    cell2.innerHTML = grade;
+
+    form.reset();
+    document.getElementById("name").focus();
+    event.preventDefault();
+}
+
+function getAverage(){
+    let total = Array.from(table.rows).slice(1).reduce((subTotal, row) => {
+    return subTotal + parseFloat(row.cells[1].innerHTML); }, 0);
+
+    let average = total/(table.rows.length-1);
+    document.getElementById("average").innerHTML= "Average is " + average;
+}
+
+function clearRows(){
+    for (let i = table.rows.length; i > 1; i--) {
+            table.deleteRow(i-1);
+        }
+    document.getElementById("average").innerHTML="";
+}
+</script>
+
+</body>
+</html>
