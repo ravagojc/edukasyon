@@ -7,9 +7,9 @@ class average.
 
 **Functionalities**
 <li>Tester can input the students’ name and grade. 
-<li>The updated list of grades will be shown after input
+<li>The updated list of grades will be shown after input.
 <li>Tester can press Get Average button to compute and show the average grade.
-<li>Tester can clear all grades
+<li>Tester can clear all grades.
   
 **How to use the project**
 Open the file index.html in the browser
@@ -21,8 +21,8 @@ Open the file index.html in the browser
 
 **Technical Descriptions**
 <li>HTML was used to create Form, Inputs, Buttons, Table, and general text descriptions.
-<li>CSS is used to show border of the Table for easier visibility
-<li>JavaScript for functions
+<li>CSS is used to show border of the Table for easier visibility.
+<li>JavaScript for functions.
 
 **Functions List**
   <li>getInput - getting input is done by listening to form submit that contains the name and grade this is then inserted as a row in the table. 
