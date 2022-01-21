@@ -50,7 +50,12 @@ function getAverage(){
     return subTotal + parseFloat(row.cells[1].innerHTML); }, 0);
 
     let average = total/(table.rows.length-1);
-    document.getElementById("average").innerHTML= "Average is " + average;
+
+    if(average){
+    document.getElementById("average").innerHTML= "Average grade: " + average;
+    }else{
+        document.getElementById("average").innerHTML= "Must input grades first!";
+    }
 }
 
 function clearRows(){
